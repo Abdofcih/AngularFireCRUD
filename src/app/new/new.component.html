@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row my-5">
+    <div class="col-sm-8 col-md-6 m-auto">
+      <h1 class="display-4">Add Employee</h1>
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" class="mt-3">
+        <input type="hidden" name="id" #id="ngModel" [(ngModel)]="formData.id">
+        <div class="form-group">
+          <input name="fullName" #fullName="ngModel" [(ngModel)]="formData.fullName" class="form-control" placeholder="Full name" required>
+          <div *ngIf="fullName.invalid && fullName.touched" class="validation-error ">This field is required.</div>
+        </div>
+        <div class="form-group">
+          <input name="position" #position="ngModel" [(ngModel)]="formData.position" class="form-control" placeholder="Position">
+        </div>
+        <div class="form-group">
+          <input name="mobile" #mobile="ngModel" [(ngModel)]="formData.mobile" class="form-control" placeholder="Mobile">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input name="userName" #empCode="ngModel" [(ngModel)]="formData.userName" class="form-control" placeholder="username">
+          </div>
+          <div class="form-group  col-md-6">
+            <input name="age" #mobile="ngModel" [(ngModel)]="formData.age" class="form-control" placeholder="Age">
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-success">SUBMIT</button>
+        </div>
+       
+      </form>
+    </div>
+  </div>
+</div>
+

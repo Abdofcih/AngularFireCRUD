@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">ngFirebaseCRUD</a>
+
+
+  <div  >
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item " [class.active]="activeLink == 'home'">
+        <a class="nav-link" [routerLink]="['/home']" (click)="changeActiveLink('home')">Home </a>
+      </li>
+      <li class="nav-item" [class.active]="activeLink == 'add'">
+        <a class="nav-link" [routerLink]="['/add']" (click)="changeActiveLink('add')">Add</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

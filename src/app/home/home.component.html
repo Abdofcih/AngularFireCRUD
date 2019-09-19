@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-10 m-auto">
+      <h1 class="display-3 text-center mb-4">Angular7 Firebase CRUD</h1>
+<table class="table table-hover table-dark">
+  <thead>
+    <th>Name</th>
+    <th>UserName</th>
+    <th>Position</th>
+    <th>Mobile</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of list">
+      <td > {{emp.fullName}}</td>
+      <td > {{emp.userName}}</td>
+      <td >{{emp.position}}</td>
+      <td >{{emp.mobile}}</td>
+      <td>
+        <a class="btn btn-danger text-white mr-2" (click)="onDelete(emp.id)">Delete</a>
+        <a class="btn btn-info" [routerLink]="['/edit',emp.id]" >Edit</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+  </div>
+</div>
